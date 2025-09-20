@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diya Kumar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            margin-top: 0px;
+        }
+
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%),
+                url('assets/spaced_out_background.webp') center/cover;
+            padding: 6rem 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .hero .affiliation {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .hero .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hero .contact-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .hero .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .research-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .research-item {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .research-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-left-color: #667eea;
+        }
+
+        .research-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .research-meta {
+            font-size: 0.9rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .research-description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 1.5rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .podcast-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 15px;
+        }
+
+        .podcast-highlight h3 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .podcast-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .podcast-stat {
+            text-align: center;
+        }
+
+        .podcast-stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .podcast-stat-label {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0f0f23;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .podcast-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Diya Kumar</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="mailto:diya@caltech.edu">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Diya Kumar</h1>
+                <p class="subtitle">Astrophysics & Planetary Science Undergraduate</p>
+                <p class="affiliation">California Institute of Technology</p>
+                <div class="contact-links">
+                    <a href="mailto:diya@caltech.edu">Email</a>
+                    <a href="https://spacedoutpodcast.com" target="_blank">Podcast</a>
+                    <a href="#research">Research</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-in">
+                        <p>I'm an undergraduate student at <strong>Caltech</strong> studying Astrophysics and Planetary Science, passionate about understanding planetary system dynamics and stellar evolution. My research spans from <strong>exoplanet detection methods</strong> to <strong>N-body simulations</strong> of resonant planetary systems.</p>
+                        
+                        <p>Beyond research, I founded and host <strong>Spaced Out Podcast</strong>, making astronomy accessible to non-STEM audiences through engaging conversations with leading researchers. I'm also actively involved in STEM outreach and mentoring through various Caltech programs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2>Research Experience</h2>
+                <div class="research-grid">
+                    <div class="research-item fade-in">
+                        <h3>N-body Simulations of Resonant Planetary Systems</h3>
+                        <div class="research-meta">University of Hawaii at Manoa • Prof. Fei Dai • June 2025 - Present</div>
+                        <p class="research-description">Developing N-body simulations with REBOUND to study how resonances break over long-term evolution in planetary systems. Building automated pipelines for parallelized simulations and investigating the timescales and mechanisms of resonance disruption, providing theoretical context to observed exoplanet architectures.</p>
+                    </div>
+                    
+                    <div class="research-item fade-in">
+                        <h3>Pre-Main Sequence Star Variability Analysis</h3>
+                        <div class="research-meta">Caltech • Prof. Lynne Hillenbrand • January 2024 - Present</div>
+                        <p class="research-description">Analyzing spectral data to investigate the variability of isolated pre-main sequence star V437AUR, focusing on physical processes driving brightness fluctuations. Developing analysis software to interpret spectral data and understand accretion mechanisms in stellar disks. Currently preparing findings for publication.</p>
+                    </div>
+                    
+                    <div class="research-item fade-in">
+                        <h3>Circumbinary Planet Detection Methods</h3>
+                        <div class="research-meta">University of South Wales • Prof. Ben Montet • June - August 2024</div>
+                        <p class="research-description">Implemented novel detection methods for circumbinary planets to avoid observational plane bias affecting traditional approaches. Developed Python pipelines for large-scale analysis of binary star systems and calculated precession levels to identify planetary evidence. Presented preliminary results at conferences.</p>
+                    </div>
+                    
+                    <div class="research-item fade-in">
+                        <h3>Young Stellar Object Dynamics</h3>
+                        <div class="research-meta">NASA Jet Propulsion Laboratory • Dr. Raghvendra Sahai • June - August 2023</div>
+                        <p class="research-description">Investigated dynamics of young stellar object IRAS05506+2414 using multi-epoch data to measure proper motions and constrain stellar properties. Analyzed optical and emission line imaging to explore the Explosive Disintegration Model, contributing new insights into stellar evolution processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="podcast-highlight fade-in">
+                    <h3>Spaced Out Podcast</h3>
+                    <p>Making astronomy accessible through engaging conversations with leading researchers, featuring professor interviews and breaking down complex topics for non-STEM audiences since 2018.</p>
+                    <div class="podcast-stats">
+                        <div class="podcast-stat">
+                            <span class="podcast-stat-number">1,000+</span>
+                            <div class="podcast-stat-label">Subscribers</div>
+                        </div>
+                        <div class="podcast-stat">
+                            <span class="podcast-stat-number">7</span>
+                            <div class="podcast-stat-label">Years Running</div>
+                        </div>
+                        <div class="podcast-stat">
+                            <span class="podcast-stat-number">∞</span>
+                            <div class="podcast-stat-label">Curiosity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-title">Exoplanet Identification CNN</div>
+                            <div class="project-type">Machine Learning • Spring 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">Designed and trained a 2D convolutional neural network using light curves and normalized BLS periodogram outputs to identify exoplanet-hosting stars, combining astronomical data analysis with deep learning techniques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-title">Atmospheric Stripping Model</div>
+                            <div class="project-type">Theoretical Modeling • Spring 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">Built an analytical model to estimate atmospheric mass loss from giant planets during planetary collisions, contributing to our understanding of planetary evolution and atmosphere retention mechanisms.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-title">Supernova Classification</div>
+                            <div class="project-type">Observational • Fall 2023</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">Collaborated on classifying SN 2023usl using the Palomar 60-inch Telescope, employing photometric and spectroscopic data to derive key properties including type, redshift, velocity, and distance measurements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 Diya Kumar. Making the universe a little less mysterious, one discovery at a time.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">
+                <a href="mailto:diya@caltech.edu" style="color: #667eea; text-decoration: none;">diya [at] caltech [dot] edu</a> • 
+                <a href="https://spacedoutpodcast.com" style="color: #667eea; text-decoration: none;">spacedoutpodcast.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 35, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(15, 15, 35, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
