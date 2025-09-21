@@ -14,8 +14,9 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            color: #729ec4;
+            /* background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%); */
+            background: #729ec4;
             min-height: 100vh;
         }
 
@@ -26,7 +27,7 @@
         }
 
         header {
-            background: rgba(15, 15, 35, 0.95);
+            background: #729ec4;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: fixed;
@@ -76,7 +77,8 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            /* background: linear-gradient(45deg, #667eea, #764ba2); */
+            background: #729ec4;
             transition: width 0.3s ease;
         }
 
@@ -90,7 +92,7 @@
 
         .hero {
             background: 
-                linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.45) 100%),
+                linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.45) 10%),
                 url('assets/spaced_out_background.webp') center/cover;
             padding: 6rem 0;
             text-align: center;
@@ -109,10 +111,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%);
+            /* background-image: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 10%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 10%),
+                radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%); */
             animation: float 20s ease-in-out infinite;
         }
 
@@ -168,7 +170,8 @@
         }
 
         .hero .contact-links a:hover {
-            background: rgba(255, 255, 255, 0.15);
+            /* background: rgba(255, 255, 255, 0.15); */
+            background: #729ec4;
             border-color: rgba(255, 255, 255, 0.7);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
@@ -188,7 +191,7 @@
             font-weight: 300;
             text-align: center;
             margin-bottom: 3rem;
-            color: #333;
+            color: #729ec4;
             position: relative;
         }
 
@@ -200,7 +203,8 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            /* background: linear-gradient(45deg, #667eea, #764ba2); */
+            background: #729ec4;
             border-radius: 2px;
         }
 
@@ -234,7 +238,9 @@
         .research-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            border-left-color: #667eea;
+            /* border-left-color: #667eea; */
+            border-left-color: #729ec4;
+
         }
 
         .research-item h3 {
@@ -246,7 +252,8 @@
 
         .research-meta {
             font-size: 0.9rem;
-            color: #667eea;
+            /* color: #667eea; */
+            color: #729ec4;
             margin-bottom: 1rem;
             font-weight: 500;
         }
@@ -276,7 +283,9 @@
         }
 
         .project-header {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            /* background: linear-gradient(45deg, #667eea, #764ba2); */
+            background: #729ec4;
+
             color: #fff;
             padding: 1.5rem;
         }
@@ -302,7 +311,8 @@
         }
 
         .podcast-highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            /* background: linear-gradient(135deg, #667eea, #764ba2); */
+            background: #729ec4;
             color: #fff;
             padding: 3rem 0;
             text-align: center;
@@ -339,7 +349,7 @@
         }
 
         footer {
-            background: #0f0f23;
+            background: #729ec4;
             color: #fff;
             text-align: center;
             padding: 2rem 0;
@@ -399,6 +409,7 @@
                 <h1>Diya Kumar</h1>
                 <p class="subtitle">Astrophysics & Planetary Science Undergraduate</p>
                 <p class="affiliation">California Institute of Technology</p>
+                
                 <div class="contact-links">
                     <a href="mailto:diya@caltech.edu">Email</a>
                     <a href="https://spacedoutpodcast.com" target="_blank">Podcast</a>
@@ -412,7 +423,7 @@
                 <h2>About</h2>
                 <div class="about-grid">
                     <div class="about-text fade-in">
-                        <p>I'm an undergraduate student at <strong>Caltech</strong> studying Astrophysics and Planetary Science, passionate about understanding the universal pathways to planet formation - specifically why other planetary systems 
+                        <p>I'm an undergraduate student at <strong>Caltech</strong> ('26) studying Astrophysics and Planetary Science, passionate about understanding the universal pathways to planet formation - specifically why other planetary systems 
                             look so different from ours! In the pursuit of this question, my research spans from <strong>exoplanet detection methods</strong> to <strong>N-body simulations</strong> of resonant planetary systems.</p>
                         
                         <p>Beyond research, I founded and host <strong>Spaced Out Podcast</strong>, to help make astronomy accessible to non-STEM audiences through simplifying space concepts and having engaging conversations with leading researchers. I'm also actively involved in STEM outreach and mentoring through various Caltech programs.</p>
@@ -456,20 +467,21 @@
             <div class="container">
                 <div class="podcast-highlight fade-in">
                     <h3>Spaced Out Podcast</h3>
-                    <p>Making astronomy accessible through engaging conversations with leading researchers, featuring professor interviews and breaking down complex topics for non-STEM audiences since 2018.</p>
+                    <p>Making astronomy accessible through engaging conversations with leading researchers, featuring professor interviews and breaking down complex topics for non-STEM audiences.</p>
+                    <p>I post my episodes on Spotify, YouTube, and Apple Podcasts along with transcripts and blog posts on my Substack! Check it out: www.spacedout.com</p>
                     <div class="podcast-stats">
-                        <div class="podcast-stat">
+                        <!-- <div class="podcast-stat">
                             <span class="podcast-stat-number">1,000+</span>
                             <div class="podcast-stat-label">Subscribers</div>
-                        </div>
-                        <div class="podcast-stat">
+                        </div> -->
+                        <!-- <div class="podcast-stat">
                             <span class="podcast-stat-number">7</span>
                             <div class="podcast-stat-label">Years Running</div>
-                        </div>
-                        <div class="podcast-stat">
+                        </div> -->
+                        <!-- <div class="podcast-stat">
                             <span class="podcast-stat-number">∞</span>
                             <div class="podcast-stat-label">Curiosity</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -485,7 +497,7 @@
                             <div class="project-type">Machine Learning • Spring 2025</div>
                         </div>
                         <div class="project-content">
-                            <p class="project-description">Designed and trained a 2D convolutional neural network using light curves and normalized BLS periodogram outputs to identify exoplanet-hosting stars, combining astronomical data analysis with deep learning techniques.</p>
+                            <p class="project-description">Designed and trained a 2D convolutional neural network using light curves and normalized BLS periodogram outputs to identify exoplanet-hosting stars, combining astronomy data analysis with deep learning techniques.</p>
                         </div>
                     </div>
                     
@@ -495,7 +507,8 @@
                             <div class="project-type">Theoretical Modeling • Spring 2025</div>
                         </div>
                         <div class="project-content">
-                            <p class="project-description">Built an analytical model to estimate atmospheric mass loss from giant planets during planetary collisions, contributing to our understanding of planetary evolution and atmosphere retention mechanisms.</p>
+                            <p class="project-description">Built an analytical model to estimate atmospheric mass loss from giant planets during planetary collisions to
+                                 learn more about atmosphere retention during the collision-prone early planetary system stage.  </p>
                         </div>
                     </div>
                     
@@ -505,7 +518,7 @@
                             <div class="project-type">Observational • Fall 2023</div>
                         </div>
                         <div class="project-content">
-                            <p class="project-description">Collaborated on classifying SN 2023usl using the Palomar 60-inch Telescope, employing photometric and spectroscopic data to derive key properties including type, redshift, velocity, and distance measurements.</p>
+                            <p class="project-description">Collaborated on classifying SN 2023usl using the Palomar 60-inch Telescope, using photometric and spectroscopic data to derive key properties including type, redshift, velocity, and distance measurements.</p>
                         </div>
                     </div>
                 </div>
@@ -517,8 +530,8 @@
         <div class="container">
             <p>&copy; 2025 Diya Kumar</p>
             <p style="margin-top: 0.5rem; opacity: 0.7;">
-                <a href="mailto:diya@caltech.edu" style="color: #667eea; text-decoration: none;">diya [at] caltech [dot] edu</a> • 
-                <a href="https://spacedoutpodcast.com" style="color: #667eea; text-decoration: none;">spacedoutpodcast.com</a>
+                <a href="mailto:diya@caltech.edu" style="color: #ffffff; text-decoration: none;">diya [at] caltech [dot] edu</a> • 
+                <a href="https://spacedoutpodcast.com" style="color: #ffffff; text-decoration: none;">spacedoutpodcast.com</a>
             </p>
         </div>
     </footer>
@@ -560,10 +573,10 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 15, 35, 0.98)';
+                header.style.background = '#729ec4';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                header.style.background = 'rgba(15, 15, 35, 0.95)';
+                header.style.background = '#729ec4';
                 header.style.boxShadow = 'none';
             }
         });
