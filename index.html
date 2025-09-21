@@ -311,13 +311,38 @@
         }
 
         .podcast-highlight {
-            /* background: linear-gradient(135deg, #667eea, #764ba2); */
             background: #729ec4;
             color: #fff;
-            padding: 3rem 0;
-            text-align: center;
+            padding: 3rem;
             margin: 4rem 0;
             border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+    }
+
+        .podcast-logo {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+        }
+
+        .podcast-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .podcast-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .podcast-content h3 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
         }
 
         .podcast-highlight h3 {
@@ -356,39 +381,84 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .podcast-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .podcast-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .podcast-highlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .podcast-content {
+        text-align: center;
+    }
+}
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 15px;
         }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .hero h1 {
+            font-size: 2rem;
         }
+        
+        .hero .subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .hero .contact-links a {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+        }
+        
+        .research-item {
+            padding: 2rem;
+        }
+        
+        .podcast-highlight {
+            padding: 2rem 1.5rem;
+            gap: 1.5rem;
+        }
+        
+        .podcast-logo {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .podcast-content h3 {
+            font-size: 1.5rem;
+        }
+    }
     </style>
 </head>
 <body>
@@ -466,22 +536,13 @@
         <section class="section">
             <div class="container">
                 <div class="podcast-highlight fade-in">
-                    <h3>Spaced Out Podcast</h3>
-                    <p>Making astronomy accessible through engaging conversations with leading researchers, featuring professor interviews and breaking down complex topics for non-STEM audiences.</p>
-                    <p>I post my episodes on Spotify, YouTube, and Apple Podcasts along with transcripts and blog posts on my Substack! Check it out: www.spacedout.com</p>
-                    <div class="podcast-stats">
-                        <!-- <div class="podcast-stat">
-                            <span class="podcast-stat-number">1,000+</span>
-                            <div class="podcast-stat-label">Subscribers</div>
-                        </div> -->
-                        <!-- <div class="podcast-stat">
-                            <span class="podcast-stat-number">7</span>
-                            <div class="podcast-stat-label">Years Running</div>
-                        </div> -->
-                        <!-- <div class="podcast-stat">
-                            <span class="podcast-stat-number">∞</span>
-                            <div class="podcast-stat-label">Curiosity</div>
-                        </div> -->
+                    <div class="podcast-logo">
+                        <img src="assets/Image 5-19-25 at 10.11 PM.jpeg" alt="Spaced Out Podcast Logo">
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Spaced Out Podcast</h3>
+                        <p>Making astronomy accessible through engaging conversations with leading researchers, featuring professor interviews and breaking down complex topics for non-STEM audiences. I post my episodes on Spotify, YouTube, and Apple Podcasts along with transcripts and blog posts on my Substack! Check it out: <a href="https://spacedoutpodcast.com/" style="text-decoration: none; color: #ffffff;">www.spacedoutpodcast.com</a><p>
+
                     </div>
                 </div>
             </div>
