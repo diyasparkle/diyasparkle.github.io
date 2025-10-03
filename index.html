@@ -103,6 +103,15 @@
             display: flex;
             align-items: center;
         }
+        .hero-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 2rem;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
         .hero::before {
             content: '';
@@ -476,6 +485,7 @@
     <main>
         <section class="hero">
             <div class="container hero-content">
+                <img src="assets/mauna_kea_pic.jpg" alt="Diya Kumar" class="hero-image">
                 <h1>Diya Kumar</h1>
                 <p class="subtitle">Astrophysics & Planetary Science Undergraduate</p>
                 <p class="affiliation">California Institute of Technology</p>
